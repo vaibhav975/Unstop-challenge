@@ -1,0 +1,74 @@
+.coach {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    padding: 1em;
+    /* border: 2px dashed rgb(112, 112, 112); */
+    border-radius: 50px;
+    box-shadow: 0px 1px 4px 4px rgb(201, 202, 201);
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .seat {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin: 2px;
+  }
+  
+  .empty {
+    /* border: 1px solid rgba(7, 215, 230, 0.767); */
+    box-shadow: 1px 1px 1px 1px rgb(7, 225, 240);
+  }
+  
+  .booked {
+    background-color: rgb(5, 155, 37);
+    /* border: 1px solid rgb(5, 82, 15); */
+    box-shadow: 1px 1px 1px 1px rgb(95, 184, 109);
+  }
+  
+  .unavailable {
+    /* visibility: hidden; */
+    background-color: rgb(196, 35, 35);
+    /* border: 1px solid rgb(54, 54, 54); */
+  }
+  
+  .input-div input {
+    width: 85%;
+    height: 2em;
+    border-radius: 7px;
+    border: 2px solid rgb(71, 185, 238);
+  }
+
+  .input-div {
+    display: flex;
+  }
+  
+  .input-div button {
+    border-radius: 7px;
+    border: 2px solid rgb(71, 185, 238);
+    height: 2.5em;
+    width: 30%;
+    padding: 1px 22px;
+    margin: 0px;
+    margin-left: 5px;
+    color: aliceblue;
+    background-color: rgb(71, 185, 238);
+  }
+
+  /* .input-div button:hover {
+    cursor: pointer;
+    box-shadow: 3px solid rgb(71, 185, 238);
+    background-color: rgb(0,0,0);
+  } */
+
+  .input-div button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(71, 185, 238, 0.7), 0 0 20px rgba(71, 185, 238, 0.7), 0 0 40px rgba(71, 185, 238, 0.7), 0 0 80px rgba(71, 185, 238, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  

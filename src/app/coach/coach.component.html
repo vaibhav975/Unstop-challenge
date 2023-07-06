@@ -1,0 +1,26 @@
+<div class = "input-div">
+    <input 
+        type="number"
+        [(ngModel)] = "n"
+        placeholder="Enter number of seats to book"
+    />
+    <button (click)= "bookSeats()">Book Seats</button>
+    <button (click) = "getSeatStatus()"> Clear Coach</button>
+</div>
+
+<p>{{ message}}</p>
+
+<div class = "coach">
+    <div class="row" *ngFor="let row of seats">
+        <div 
+        [title]="seat===-1?'Booked':'Available'"
+        class="seat"
+        *ngFor="let seat of row"
+        [ngClass]="{
+            booked: seat === 1,
+            empty: seat === 0,
+            unavailable: seat === -1
+        }"
+        ></div>
+    </div>
+</div>
