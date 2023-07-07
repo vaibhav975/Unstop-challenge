@@ -15,10 +15,13 @@
     width: 50px;
     height: 50px;
     border-radius: 50px;
+    background-color: rgb(242, 245, 246);
+    box-shadow: 1px 1px 1px 1px rgb(1, 2, 2);
+    float: left;
     margin: 2px;
   }
   
-  .empty {
+  .selected {
     box-shadow: 1px 1px 1px 1px rgb(1, 2, 2);
   }
   
@@ -27,14 +30,12 @@
     box-shadow: 1px 1px 1px 1px rgb(95, 184, 109);
   }
   
-  .unavailable {
-    background-color: rgb(196, 35, 35);
-  }
-  
   .input-div input {
     width: 40%;
     height: 2em;
+    padding: 2px 4px;
     border-radius: 7px;
+    margin-bottom: 10px;
     border: 2px solid rgb(71, 185, 238);
   }
 
@@ -59,24 +60,3 @@
     box-shadow: 0 0 5px rgba(71, 185, 238, 0.7), 0 0 20px rgba(71, 185, 238, 0.7), 0 0 40px rgba(71, 185, 238, 0.7), 0 0 80px rgba(71, 185, 238, 0.7);
     background-color: rgba(0, 0, 0, 0.7);
   }
-  
-  /* ///////////////////// */
-
-  /* .seat {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    margin: 5px;
-    border: 1px solid #000;
-    text-align: center;
-    cursor: pointer;
-  } */
-  
-  .booked {
-    background-color: red;
-  }
-  
-  .selected {
-    background-color: green;
-  }
-  

@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,6 +9,7 @@ export class CoachComponent {
   seats: any[][] = [];
   selectedSeats: any[] = [];
   booking:number = 0;
+  message: string = '';
   constructor() {
     this.initializeSeats();
   }
@@ -66,7 +66,7 @@ export class CoachComponent {
   reserveSeats(): void {
     let availableSeats = this.availableSeats();
     if(availableSeats < this.booking){
-      alert("Please select less than or equal to "+availableSeats+" seats");
+      this.message="Please select less than or equal to "+availableSeats+" seats";
       return;
     }
     console.log(availableSeats,"availableSeats");
@@ -75,7 +75,7 @@ export class CoachComponent {
     }
     
     if (this.booking > 7) {
-      alert('You can reserve up to 7 seats at a time.');
+      this.message='You can reserve up to 7 seats at a time.';
       return;
     }
     

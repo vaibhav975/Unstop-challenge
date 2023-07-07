@@ -1,45 +1,19 @@
-<!-- <div class = "input-div">
-    <input 
-        type="number"
-        [(ngModel)] = "n"
-        placeholder="Enter number of seats to book"
-    />
-    <button (click)= "bookSeats()">Book Seats</button>
-    <button (click) = "getSeatStatus()"> Clear Coach</button>
-</div>
-
-<p>{{ message}}</p>
-
-<div class = "coach">
-    <div class="row" *ngFor="let row of seats">
-        <div 
-        [title]="seat===-1?'Booked':'Available'"
-        class="seat"
-        *ngFor="let seat of row"
-        [ngClass]="{
-            booked: seat === 1,
-            empty: seat === 0,
-            unavailable: seat === -1
-        }"
-        ></div>
-    </div>
-</div> -->
-
 <div class = "input-div">
-<h2>Seat Reservation</h2>
-<button (click)="reset()"> Clear Coach</button>
-</div>
-<div class="coach">
-<div class="row" *ngFor="let row of seats">
-  <div *ngFor="let seat of row" class="seat" [ngClass]="{'seat': true, 'booked': seat.booked, 'selected': seat.selected}">
-    {{ seat.number }}
-  </div>
-</div>
-<input 
+    <input 
         type="number"
         [(ngModel)] = "booking"
         placeholder="Enter number of seats to book"
     />
-<button (click)="reserveSeats()">Reserve Seats</button>
+    <button (click)="reserveSeats()">Reserve Seats</button>
+    <button (click)="reset()"> Clear Coach</button>
+
 </div>
+<span>{{message}}</span>
+<div class="coach">
+<div class="row" *ngFor="let row of seats">
+  <div class="seat" *ngFor="let seat of row" [ngClass]="{'seat': true, 'booked': seat.booked, 'selected': seat.selected}">
+    <!-- {{ seat.number }} -->
+  </div>
+</div>
+
 
