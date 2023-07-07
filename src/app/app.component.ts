@@ -17,12 +17,5 @@ export class AppComponent {
   constructor(private http: HttpClient) {   
   }
 
-  // clearCoach() {
-  //   this.http.delete(this.api+'/delete').subscribe((res: any) => {
-  //     this.CoachComponent.seats = res.seats;
-  //     this.CoachComponent.message = "";
-  //   });
-  // }
-
 }
 
