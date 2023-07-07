@@ -1,4 +1,4 @@
-<div class = "input-div">
+<!-- <div class = "input-div">
     <input 
         type="number"
         [(ngModel)] = "n"
@@ -23,4 +23,23 @@
         }"
         ></div>
     </div>
+</div> -->
+
+<div class = "input-div">
+<h2>Seat Reservation</h2>
+<button (click)="reset()"> Clear Coach</button>
 </div>
+<div class="coach">
+<div class="row" *ngFor="let row of seats">
+  <div *ngFor="let seat of row" class="seat" [ngClass]="{'seat': true, 'booked': seat.booked, 'selected': seat.selected}">
+    {{ seat.number }}
+  </div>
+</div>
+<input 
+        type="number"
+        [(ngModel)] = "booking"
+        placeholder="Enter number of seats to book"
+    />
+<button (click)="reserveSeats()">Reserve Seats</button>
+</div>
+
