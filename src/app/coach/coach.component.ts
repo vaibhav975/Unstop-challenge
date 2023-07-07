@@ -11,7 +11,15 @@ export class CoachComponent {
   booking:number = 0;
   message: string = '';
   constructor() {
-    this.initializeSeats();
+    if(!this.checklocalstorage()){
+      console.log("if");
+      this.initializeSeats();
+    }
+    else{
+      console.log("else");
+      this.getfromlocalstorage();
+    }
+    
   }
 
   
@@ -37,6 +45,10 @@ export class CoachComponent {
       seatNumber++;
     }
     this.seats.push(lastRow);
+
+    // add seat to local storage
+    
+    this.savetolocalstorage();
   }
 
   availableSeats(): number {
@@ -138,6 +150,7 @@ export class CoachComponent {
     for (const seat of reservedSeats) {
       seat.booked = true;
     }
+    this.savetolocalstorage();
   }
   
   clearSelectedSeats(): void {
@@ -146,12 +159,37 @@ export class CoachComponent {
     }
     
     this.selectedSeats = [];
+    this.savetolocalstorage();
   }
 
   reset(){
     this.seats = [];
+    this.removefromlocalstorage(); 
     this.initializeSeats();
     this.clearSelectedSeats();
+  }
+
+  savetolocalstorage(){
+    localStorage.setItem('seats', JSON.stringify(this.seats));
+  }
+
+  getfromlocalstorage(){
+    this.seats = JSON.parse(localStorage.getItem('seats') || '{}');
+  }
+
+  checklocalstorage(){
+    if(localStorage.getItem('seats')){
+      return true;
+    }
+    return false;
+  }
+
+  updateloacalstorage(){
+    localStorage.setItem('seats', JSON.stringify(this.seats));
+  }
+
+  removefromlocalstorage(){
+    localStorage.removeItem('seats');
   }
  }
 
